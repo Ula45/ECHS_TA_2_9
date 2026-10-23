@@ -1,0 +1,7 @@
+# Runtime dependencies for the gateway, frontend and benchmark.
+# Ranges (not exact pins) so pip can pick wheels that exist for aarch64 / Python 3.12.
+fastapi>=0.110
+uvicorn>=0.29
+httpx>=0.27
+requests>=2.31
+streamlit>=1.35

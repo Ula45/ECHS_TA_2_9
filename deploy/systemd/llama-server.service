@@ -1,0 +1,13 @@
+[Unit]
+Description=llama.cpp server (Jetson Edge LLM Chat)
+After=network.target
+
+[Service]
+User=jetson3
+WorkingDirectory=/home/jetson3/ECHS_PRAC2/jetson-edge-llm-chat
+ExecStart=/home/jetson3/ECHS_PRAC2/jetson-edge-llm-chat/scripts/start_llama_server.sh 3b-1slot
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

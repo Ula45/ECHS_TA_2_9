@@ -1,0 +1,15 @@
+[Unit]
+Description=Streamlit chat UI (Jetson Edge LLM Chat)
+After=gateway.service
+Wants=gateway.service
+
+[Service]
+User=jetson3
+WorkingDirectory=/home/jetson3/ECHS_PRAC2/jetson-edge-llm-chat
+EnvironmentFile=/home/jetson3/ECHS_PRAC2/jetson-edge-llm-chat/.env
+ExecStart=/home/jetson3/ECHS_PRAC2/venv/bin/python -m streamlit run frontend/app.py --server.port 8501 --server.address 0.0.0.0 --server.headless true
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

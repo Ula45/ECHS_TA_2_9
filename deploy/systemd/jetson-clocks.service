@@ -1,0 +1,11 @@
+[Unit]
+Description=Lock Jetson clocks at maximum for the current power mode
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/jetson_clocks
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

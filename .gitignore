@@ -1,0 +1,28 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Secrets and local config
+.env
+
+# Model files and the llama.cpp checkout are large: never commit them
+models/*
+!models/.gitkeep
+*.gguf
+llama.cpp/
+
+# Runtime logs and benchmark logs
+logs/*
+!logs/.gitkeep
+*.log
+
+# Stray downloads (e.g. from wget of a homepage)
+index.html
+index.html.*
+
+# OS / editor
+.DS_Store
+.vscode/

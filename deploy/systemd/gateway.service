@@ -1,0 +1,15 @@
+[Unit]
+Description=FastAPI gateway (Jetson Edge LLM Chat)
+After=llama-server.service
+Wants=llama-server.service
+
+[Service]
+User=jetson3
+WorkingDirectory=/home/jetson3/ECHS_PRAC2/jetson-edge-llm-chat
+EnvironmentFile=/home/jetson3/ECHS_PRAC2/jetson-edge-llm-chat/.env
+ExecStart=/home/jetson3/ECHS_PRAC2/venv/bin/python -m uvicorn gateway.main:app --host 127.0.0.1 --port 8000
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
